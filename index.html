@@ -12,24 +12,35 @@
 
              localStorage.setItem("tarea", tarea);
              localStorage.setItem("descripcion", descripcion);
+
+             document.getElementById("tarea").value = "";
+            document.getElementById("descripcion").value = "";
         }
 
         function mostrarTarea(){
-            const vTarea = localStorage.getItem("tarea");
-            const vDescripcion = localStorage.getItem("descripcion");    
+            const lista = document.getElementById("listaTareas");
+            lista.innerHTML = ""; // Limpiar la lista antes de mostrar
 
-            document.getElementById("tarea").value = vTarea;
-            document.getElementById("descripcion").value = vDescripcion;
+            // Mostrar todas las tareas almacenadas
+            for (let i = 0; i < localStorage.length; i++) {
+                const tarea = localStorage.key(i);
+                const descripcion = localStorage.getItem(tarea);
 
-            if (vTarea && vDescripcion) {
-                const lista = document.getElementById("listaTareas");
-                const nuevaTarea = document.createElement("li");
-                nuevaTarea.textContent = `Tarea: ${vTarea}, Descripción: ${vDescripcion}`;
-                lista.appendChild(nuevaTarea);
-            } else {
-                alert("No hay tareas guardadas.");
+                const tareaItem = document.createElement("li");
+                tareaItem.textContent = `Tarea: ${tarea}, Descripción: ${descripcion}`;
+                lista.appendChild(tareaItem);
             }
         }
+
+        function actualizarTarea(){
+            const nTarea = document.getElementById("tarea").value;
+            const nDescripcion = document.getElementById("descripcion").value;
+
+            localStorage.setItem(nTarea,nTarea);
+            localStorage.setItem("d"+ nTarea,nDescripcion);
+
+        }
+
     </script>
 </head>
 <body>
@@ -45,6 +56,7 @@
             <br>
             <input type="button" onclick="agregarTarea()" value="Agregar"/>
             <input type="button" onclick="mostrarTarea()" value="Mostrar"/>
+            <input type="button" onclick="actualizarTarea()" value="Actualizar"/>
             <br>
         </form>
         </div>
