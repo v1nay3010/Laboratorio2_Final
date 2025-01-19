@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+         function agregarTarea(){
+             const tarea = document.getElementById("tarea").value;
+             const descripcion = document.getElementById("descripcion").value;
+
+             localStorage.setItem("tarea", tarea);
+             localStorage.setItem("descripcion", descripcion);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+    <div class="formulario">
+        <form id="formulario" onsubmit="agregarTarea(); return false;"method="post">
+            <h1>Agrega una tarea</h1>
+            <label name="tarea">Tarea: </label>
+            <input type="text" id="tarea"/>
+            <br>
+            <label name="descripcion">Descripción: </label>
+            <input type="textarea" id="descripcion"/>
+            <br>
+            <input type="button" onclick="agregarTarea()" value="Agregar"/>
+            <br>
+        </form>
+        </div>
+            <hr>
+            <div class="listaTareas">
+            <h1>Lista de tareas</h1>
+            <ul>
+                <li>Tarea: </li>
+                <li>Tarea: </li>
+                <li>Tarea: </li>
+            </ul>
+            </div>    
+        </div>
+        </body>
+</html>
