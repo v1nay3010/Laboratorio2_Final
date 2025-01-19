@@ -13,6 +13,23 @@
              localStorage.setItem("tarea", tarea);
              localStorage.setItem("descripcion", descripcion);
         }
+
+        function mostrarTarea(){
+            const vTarea = localStorage.getItem("tarea");
+            const vDescripcion = localStorage.getItem("descripcion");    
+
+            document.getElementById("tarea").value = vTarea;
+            document.getElementById("descripcion").value = vDescripcion;
+
+            if (vTarea && vDescripcion) {
+                const lista = document.getElementById("listaTareas");
+                const nuevaTarea = document.createElement("li");
+                nuevaTarea.textContent = `Tarea: ${vTarea}, Descripción: ${vDescripcion}`;
+                lista.appendChild(nuevaTarea);
+            } else {
+                alert("No hay tareas guardadas.");
+            }
+        }
     </script>
 </head>
 <body>
@@ -27,16 +44,14 @@
             <input type="textarea" id="descripcion"/>
             <br>
             <input type="button" onclick="agregarTarea()" value="Agregar"/>
+            <input type="button" onclick="mostrarTarea()" value="Mostrar"/>
             <br>
         </form>
         </div>
             <hr>
             <div class="listaTareas">
             <h1>Lista de tareas</h1>
-            <ul>
-                <li>Tarea: </li>
-                <li>Tarea: </li>
-                <li>Tarea: </li>
+            <ul id="listaTareas">
             </ul>
             </div>    
         </div>
