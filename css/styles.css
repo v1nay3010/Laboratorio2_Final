@@ -53,6 +53,17 @@ h1{
 .container .listaTareas{
     margin-top: 20px; 
 }
+.container .listaTareas input[type=button]{
+    width: 100%;
+    background: rgb(133, 187, 151, 1);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 7px;
+}
+
+
 
 .container .listaTareas ul{
     padding: 10px;
@@ -61,3 +72,5 @@ h1{
 .container .listaTareas ul li{
     margin-top: 10px;
 }
+
+

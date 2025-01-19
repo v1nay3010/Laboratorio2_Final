@@ -28,6 +28,14 @@
 
                 const tareaItem = document.createElement("li");
                 tareaItem.textContent = `Tarea: ${tarea}, Descripción: ${descripcion}`;
+
+                const eliminarButton = document.createElement("button");
+                eliminarButton.textContent = "Eliminar";
+                eliminarButton.onclick = function() {
+                    eliminarTarea(tarea);
+                };
+
+                tareaItem.appendChild(eliminarButton);
                 lista.appendChild(tareaItem);
             }
         }
@@ -38,6 +46,8 @@
 
             localStorage.setItem(nTarea,nTarea);
             localStorage.setItem("d"+ nTarea,nDescripcion);
+
+            mostrarTarea();
 
         }
 
@@ -57,6 +67,7 @@
             <input type="button" onclick="agregarTarea()" value="Agregar"/>
             <input type="button" onclick="mostrarTarea()" value="Mostrar"/>
             <input type="button" onclick="actualizarTarea()" value="Actualizar"/>
+            
             <br>
         </form>
         </div>
@@ -65,6 +76,7 @@
             <h1>Lista de tareas</h1>
             <ul id="listaTareas">
             </ul>
+            <input type="button" onclick="eliminarTodo()" value="Eliminar todo"/>
             </div>    
         </div>
         </body>
