@@ -10,8 +10,7 @@
              const tarea = document.getElementById("tarea").value;
              const descripcion = document.getElementById("descripcion").value;
 
-             localStorage.setItem("tarea", tarea);
-             localStorage.setItem("descripcion", descripcion);
+             localStorage.setItem(tarea, descripcion);
 
              document.getElementById("tarea").value = "";
             document.getElementById("descripcion").value = "";
@@ -44,12 +43,22 @@
             const nTarea = document.getElementById("tarea").value;
             const nDescripcion = document.getElementById("descripcion").value;
 
-            localStorage.setItem(nTarea,nTarea);
-            localStorage.setItem("d"+ nTarea,nDescripcion);
+            localStorage.setItem(nTarea,nDescripcion);
 
             mostrarTarea();
 
         }
+
+        function eliminarTarea(tarea){
+            localStorage.removeItem(tarea);
+            mostrarTarea();
+        }
+
+        function eliminarTodo(){
+            localStorage.clear();
+            mostrarTarea();  // Actualizar la lista después de eliminar todo
+        }
+
 
     </script>
 </head>
