@@ -45,6 +45,7 @@ h1{
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 7px;
+    cursor: pointer;
 }
 .formulario input[type=button]:hover{
     background: rgb(243, 125, 164);
@@ -53,6 +54,7 @@ h1{
 .container .listaTareas{
     margin-top: 20px; 
 }
+
 .container .listaTareas input[type=button]{
     width: 100%;
     background: rgb(133, 187, 151, 1);
@@ -61,9 +63,12 @@ h1{
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 7px;
+    cursor: pointer;
 }
 
-
+.container .listaTareas input[type=button]:hover{
+    background: rgb(243, 125, 164);
+}
 
 .container .listaTareas ul{
     padding: 10px;
@@ -73,4 +78,19 @@ h1{
     margin-top: 10px;
 }
 
+button {
+    background-color: #e05555; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 30px;
+    cursor: pointer;
+    border-radius: 5px; 
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #ff1a1a; 
+    transform: scale(1.1); 
+}
 
